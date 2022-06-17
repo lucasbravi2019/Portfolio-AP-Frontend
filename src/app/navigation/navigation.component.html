@@ -1,0 +1,11 @@
+<nav>
+    <div class="hamburguer" (click)="openNavigation()">
+        <fa-icon [icon]="faBars" class="bars"></fa-icon>
+    </div>
+    <div class="navigation" [ngClass]="showNavigation()">
+        <a href="">Home</a>
+        <a href="">Technologies</a>
+        <a href="">Jobs</a>
+        <a href="">Contact</a>
+    </div>
+</nav>

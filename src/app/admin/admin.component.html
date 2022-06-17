@@ -1,0 +1,15 @@
+<h1>Persona</h1>
+<p *ngIf="persona !== undefined">{{ persona.firstName + " " + persona.lastName }}</p>
+<div *ngIf="isLoading" class="isLoading"></div>
+<h3 *ngIf="!isLoading && persona === undefined">No hay ninguna persona guardada</h3>
+<button *ngIf="!isLoading && persona === undefined" (click)="crear()">Crear Persona</button>
+<button *ngIf="!isLoading && persona !== undefined" (click)="actualizar()">Actualizar persona</button>
+
+<form *ngIf="operacion === 1 || operacion === 2">
+    <label for="firstName">FirstName: </label>
+    <input type="text" name="firstName" [(ngModel)]="personaUpdate.firstName" value={{personaUpdate.firstName}}>
+    <label for=" lastName ">LastName: </label>
+    <input type="text " name="lastName " [(ngModel)]="personaUpdate.lastName" value={{personaUpdate.lastName}}>
+    <button *ngIf="operacion === 1" (click)="createPersona()">Create</button>
+    <button *ngIf="operacion === 2" (click)="updatePersona()">Update</button>
+</form>

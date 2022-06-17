@@ -1,0 +1,11 @@
+<section>
+    <h3>Technologies</h3>
+    <div *ngIf="isLoading" class="isLoading"></div>
+    <p *ngIf="errorMsg !== null">{{ this.errorMsg }}</p>
+    <div *ngIf="errorMsg === null && this.technologies.length > 0">
+        <div *ngFor="let technology of this.technologies">
+            <p>{{ technology.technologyName }}</p>
+            <p>{{ technology.technologyLevel }}</p>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,5 @@
+<p class="isLoading" *ngIf="isLoading"></p>
+<h3 *ngIf="!isLoading && persona === null" class="center">There was an error to fetch my data</h3>
+<main *ngIf="!isLoading">
+    <h3 *ngIf="persona !== null" id="animation">{{ this.animationMsg }}</h3>
+</main>
