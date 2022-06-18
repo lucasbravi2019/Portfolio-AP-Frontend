@@ -16,7 +16,7 @@ export class JobService {
 
   getAllJobs(): Observable<Job[]> {
     this.header = this.loginService.checkUserlogged(this.header)
-    return this.http.get<Job[]>(Paths.JOB, {
+    return this.http.get<Job[]>(Paths.BASE + Paths.JOB, {
       headers: this.header
     })
   }

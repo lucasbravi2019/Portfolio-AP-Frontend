@@ -19,7 +19,7 @@ export class PersonaService {
 
   getPersona(): Observable<Persona> {
     this.header = this.loginService.checkUserlogged(this.header)
-    return this.http.get<Persona>(Paths.PERSONA, { 
+    return this.http.get<Persona>(Paths.BASE + Paths.PERSONA, { 
       headers: this.header
     })
   }
