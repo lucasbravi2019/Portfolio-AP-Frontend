@@ -1,0 +1,33 @@
+<section>
+    <h3>Technologies</h3>
+    <button (click)="crear()">
+        <fa-icon [icon]="faplus"></fa-icon>
+    </button>
+    <div *ngIf="isLoading" class="isLoading"></div>
+    <form *ngIf="operacion === 1 || operacion === 2">
+        <label for="technology-name">Technology Name</label>
+        <input type="text" name="technology-name" [(ngModel)]="technologyForm.technologyName">
+        <label for="technology-level">Technology Level</label>
+        <input type="text" name="technology-level" [(ngModel)]="technologyForm.technologyLevel">
+        <select name="persona-id" [(ngModel)]="technologyForm.personaId">
+            <option [value]="null" [selected]="true" [disabled]="true">Persona ID</option>
+            <option [value]="persona?.id">{{ persona?.firstName }}</option>
+        </select>
+        <button *ngIf="operacion === 1" (click)="createTechnology()">Guardar</button>
+        <button *ngIf="operacion === 2" (click)="updateTechnology()">Actualizar</button>
+    </form>
+    <table *ngIf="!isLoading && this.technologyList.length > 0">
+        <tr>
+            <th>Technology Name</th>
+            <th>Technology Level</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr *ngFor="let technology of this.technologyList">
+            <td>{{ technology.technologyName }}</td>
+            <td>{{ technology.technologyLevel }}</td>
+            <td><button (click)="editar(technology)">Edit</button></td>
+            <td><button (click)="borrar(technology.id)">Delete</button></td>
+        </tr>
+    </table>
+</section>

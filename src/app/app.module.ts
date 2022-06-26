@@ -4,18 +4,29 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { HeroComponent } from './hero/hero.component';
-import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
-import { AdminComponent } from './admin/admin.component';
+import { AdminComponent } from './components/admin/admin.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TechnologyHomeComponent } from './technology-home/technology-home.component';
-import { ContactHomeComponent } from './contact-home/contact-home.component';
-import { JobHomeComponent } from './job-home/job-home.component';
-import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { HomeComponent } from './components/home/home.component';
+import { TechnologyHomeComponent } from './components/technology-home/technology-home.component';
+import { ContactHomeComponent } from './components/contact-home/contact-home.component';
+import { JobHomeComponent } from './components/job-home/job-home.component';
+import { LoginComponent } from './components/login/login.component';
+import { PersonaAdminComponent } from './components/persona-admin/persona-admin.component';
+import { ContactAdminComponent } from './components/contact-admin/contact-admin.component';
+import { TechnologyAdminComponent } from './components/technology-admin/technology-admin.component';
+import { JobAdminComponent } from './components/job-admin/job-admin.component';
+import { ProjectAdminComponent } from './components/project-admin/project-admin.component';
+import { ProjectHomeComponent } from './components/project-home/project-home.component';
+import { AboutAdminComponent } from './components/about-admin/about-admin.component';
+import { AboutHomeComponent } from './components/about-home/about-home.component';
+import { EducationHomeComponent } from './components/education-home/education-home.component';
+import { EducationAdminComponent } from './components/education-admin/education-admin.component';
+import { LogoComponent } from './components/logo/logo.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +41,17 @@ import { LoginComponent } from './login/login.component';
     ContactHomeComponent,
     JobHomeComponent,
     LoginComponent,
+    PersonaAdminComponent,
+    ContactAdminComponent,
+    TechnologyAdminComponent,
+    JobAdminComponent,
+    ProjectAdminComponent,
+    ProjectHomeComponent,
+    AboutAdminComponent,
+    AboutHomeComponent,
+    EducationHomeComponent,
+    EducationAdminComponent,
+    LogoComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,40 @@
+<section>
+    <h3>About</h3>
+    <div *ngIf="!isLoading && about === null">
+        <button (click)="crear()">
+            <fa-icon [icon]="faplus"></fa-icon>
+        </button>
+    </div>
+    <form *ngIf="operacion === 1 || operacion === 2">
+        <label for="title">Title</label>
+        <input type="text" name="title" [(ngModel)]="aboutForm.title" [value]="this.aboutForm.title">
+        <label for="about">About</label>
+        <input type="text" name="about" [(ngModel)]="aboutForm.about" [value]="this.aboutForm.about">
+        <label for="image">Image</label>
+        <input type="text" name="image" [(ngModel)]="aboutForm.image" [value]="this.aboutForm.image">
+        <select name="persona-id" [(ngModel)]="aboutForm.personaId">
+            <option [value]="null" [selected]="true" [disabled]="true">Persona ID</option>
+            <option [value]="persona?.id">{{ persona?.firstName }}</option>
+        </select>
+        <button *ngIf="operacion === 1" (click)="crearAbout()">Crear About</button>
+        <button *ngIf="operacion === 2" (click)="actualizarAbout()">Actualizar About</button>
+    </form>
+    <p *ngIf="!isLoading && errorMsg !== null">{{ this.errorMsg }}</p>
+    <div *ngIf="isLoading" class="isLoading"></div>
+    <div *ngIf="!isLoading && about !== null">
+        <table>
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>About</th>
+                <th>Edit</th>
+            </tr>
+            <tr>
+                <td>{{ about.image }}</td>
+                <td>{{ about.title }}</td>
+                <td>{{ about.about }}</td>
+                <td><button (click)="actualizar()">Edit</button></td>
+            </tr>
+        </table>
+    </div>
+</section>

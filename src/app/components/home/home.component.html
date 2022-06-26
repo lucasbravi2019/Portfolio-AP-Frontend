@@ -1,0 +1,10 @@
+<div *ngIf="isLoading" class="isLoading"></div>
+<div *ngIf="!isLoading">
+    <app-hero *ngIf="persona !== null" [persona]="persona"></app-hero>
+    <app-about-home *ngIf="persona !== null && persona.about !== null" [about]="persona.about"></app-about-home>
+    <app-job-home *ngIf="persona !== null" [jobs]="persona.jobList"></app-job-home>
+    <app-education-home *ngIf="persona !== null" [educationList]="persona.educationList"></app-education-home>
+    <app-technology-home *ngIf="persona !== null" [technologyList]="persona.technologyList"></app-technology-home>
+    <app-contact-home *ngIf="persona !== null" [contactList]="persona.contactList"></app-contact-home>
+    <app-project-home *ngIf="persona !== null" [projectList]="persona.projectList"></app-project-home>
+</div>

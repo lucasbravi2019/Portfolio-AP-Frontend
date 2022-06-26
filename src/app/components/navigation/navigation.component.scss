@@ -1,0 +1,15 @@
+@use '../../../global_styles/mixins' as m;
+button {
+    margin: 1rem auto;
+    display: block;
+    padding: 0.5rem;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+button:hover {
+    border-bottom: 2px solid gray;
+    margin-bottom: .8rem;
+}

@@ -1,0 +1,50 @@
+<section>
+    <h3>Projects</h3>
+    <button (click)="crear()">
+        <fa-icon [icon]="faplus"></fa-icon>
+    </button>
+    <form *ngIf="operacion === 1 || operacion === 2">
+        <label for="project-name">Project Name</label>
+        <input type="text" name="project-name" [(ngModel)]="projectForm.projectName">
+        <label for="description">Description</label>
+        <input type="text" name="description" [(ngModel)]="projectForm.description">
+        <label for="site">Site</label>
+        <input type="text" name="site" [(ngModel)]="projectForm.site">
+        <label for="image">Image</label>
+        <input type="text" name="image" [(ngModel)]="projectForm.image">
+        <label for="persona-id">Persona ID</label>
+        <select name="persona-id" [(ngModel)]="projectForm.personaId">
+            <option [value]="null" [selected]="true" [disabled]="true">Persona ID</option>
+            <option [value]="persona?.id">{{ persona?.firstName }}</option>
+        </select>
+        <button *ngIf="operacion === 1" (click)="createProject()">Guardar</button>
+        <button *ngIf="operacion === 2" (click)="updateProject()">Actualizar</button>
+    </form>
+    <div *ngIf="isLoading" class="isLoading"></div>
+    <div *ngIf="!isLoading && this.projectList.length > 0">
+        <div *ngFor="let project of this.projectList">
+            <table>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Description</th>
+                    <th>Site</th>
+                    <th>Image</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tr>
+                    <td>{{ project.projectName }}</td>
+                    <td>{{ project.description }}</td>
+                    <td>{{ project.site }}</td>
+                    <td>{{ project.image }}</td>
+                    <td><button (click)="actualizar(project)">Edit</button></td>
+                    <td><button (click)="borrar(project.id)">Delete</button></td>
+                </tr>
+            </table>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+</section>

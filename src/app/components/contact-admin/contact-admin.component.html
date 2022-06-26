@@ -1,0 +1,34 @@
+<section>
+    <h3>Contacts</h3>
+    <button (click)="crear()"><fa-icon [icon]="faplus"></fa-icon></button>
+    <form *ngIf="operacion === 1 || operacion === 2">
+        <label for="description">Description</label>
+        <input type="text" name="description" [(ngModel)]="contactForm.description" [value]="contactForm.description">
+        <label for="contact">Contact</label>
+        <input type="text" name="contact" [(ngModel)]="contactForm.contact" [value]="contactForm.contact">
+        <select name="personaId" [(ngModel)]="contactForm.personaId">
+            <option [value]="null" [disabled]="true" [defaultSelected]="true">Persona ID</option>
+            <option [value]="persona?.id">{{ persona?.firstName }}</option>
+        </select>
+        <button *ngIf="operacion === 1" (click)="crearContacto()">Crear contacto</button>
+        <button *ngIf="operacion === 2" (click)="actualizarContacto()">Actualizar contacto</button>
+    </form>
+    <div *ngIf="isLoading" class="isLoading"></div>
+    <div *ngIf="!isLoading && contactList.length > 0">
+        <table>
+            <tr>
+                <th>Description</th>
+                <th>Contact</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr *ngFor="let contact of this.contactList">
+                <td>{{ contact.description }}</td>
+                <td>{{ contact.contact }}</td>
+                <td><button (click)="editar(contact)">Edit</button></td>
+                <td><button (click)="borrar(contact.id)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+
+</section>

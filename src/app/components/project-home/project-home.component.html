@@ -1,0 +1,9 @@
+<section *ngIf="projectList.length > 0">
+    <h3>Projects</h3>
+    <div *ngFor="let project of projectList">
+        <p>{{ project.projectName }}</p>
+        <p>{{ project.description }}</p>
+        <p>{{ project.site }}</p>
+        <p>{{ project.image }}</p>
+    </div>
+</section>

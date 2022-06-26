@@ -1,7 +1,11 @@
-<main>
+<header>
     <app-header></app-header>
+</header>
 
+<main>
     <router-outlet></router-outlet>
-
-    <app-footer></app-footer>
 </main>
+
+<footer>
+    <app-footer [footer]="'Copyright 2022'"></app-footer>
+</footer>
