@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -9,19 +8,13 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
-
-  faBars = faBars
-  show = {
-    display: 'none'
-  } 
-
+  constructor(private router: Router) { }
+ 
   ngOnInit(): void {
   }
 
-  openNavigation() {
-    if (this.show.display === 'none') this.show.display = 'block'
-    else this.show.display = 'none'
+  login() {
+    this.router.navigate(['login'])
   }
-
+ 
 }

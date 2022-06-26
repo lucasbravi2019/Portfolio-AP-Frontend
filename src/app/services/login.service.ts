@@ -14,7 +14,7 @@ export class LoginService {
   constructor(private http: HttpClient, private router: Router) { }
 
   login(userRequest: LoginRequest): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(Paths.LOGIN, userRequest)
+    return this.http.post<LoginResponse>(Paths.BASE + Paths.LOGIN, userRequest)
   }
   
   checkUserlogged(header: HttpHeaders): HttpHeaders {
