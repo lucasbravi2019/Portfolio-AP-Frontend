@@ -1,11 +1,12 @@
-<section>
+<section *ngIf="jobs.length > 0">
     <h3>Jobs</h3>
-    <div *ngIf="jobs.length > 0">
-        <div *ngFor="let job of this.jobs">
-            <p>{{ job.startDate }} to {{ job.endDate }}</p>
+    <div *ngFor="let job of this.jobs" class="contenedor">
+        <fa-icon [icon]="briefcase" class="icon"></fa-icon>
+        <div class="info">
+            <h4>{{ job.jobRole }}</h4>
+            <time>{{ job.startDate }} to {{ job.endDate }}</time>
             <p>{{ job.companyName }}</p>
             <p>{{ job.jobDescription }}</p>
-            <p>{{ job.jobRole }}</p>
         </div>
     </div>
 </section>

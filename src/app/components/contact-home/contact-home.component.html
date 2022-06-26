@@ -1,7 +1,10 @@
 <section *ngIf="contactList.length > 0">
     <h3>Contact</h3>
-    <div *ngFor="let contact of this.contactList">
-        <p>{{ contact.description }}</p>
-        <p>{{ contact.contact }}</p>
+    <div *ngFor="let contact of this.contactList" class="contenedor">
+        <fa-icon [icon]="envelope" class="icon"></fa-icon>
+        <div class="info">
+            <p>{{ contact.description }}</p>
+            <p>{{ contact.contact }}</p>
+        </div>
     </div>
 </section>

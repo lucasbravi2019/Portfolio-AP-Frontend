@@ -7,33 +7,4 @@ img {
     display: block;
 }
 
-section {
-    margin: 3rem 0;
-    padding: 2rem;
-    .contenedor {
-        @include m.contenedor(1rem);
-        @include m.flexSpace;
-        justify-content: center!important;
-        align-items: center;
-        gap: 3rem;
-        box-shadow: 2px 2px 5px 2px gray;
-    }
-    .info {
-        width: 100%;
-        text-align: center;
-        @media (min-wiwdth: 468px) {
-            width: 75%;
-            text-align: left;
-        }
-    }
-    h4 {
-        font-size: 2rem;
-        font-weight: 700;
-    }
-    fa-icon {
-        display: block;
-        text-align: center;
-        font-size: 8rem;
-        color: gray;
-    }
-}
+@include m.card;

@@ -21,34 +21,11 @@ export class HomeComponent implements OnInit {
     this.getPersona()
   }
 
-  animateMsg(msg: string | null) {
-    let index = this.animationMsg.length + 1
-    if ((msg + '_') !== this.animationMsg) {
-      this.animationMsg.replace('_', '')
-      this.animationMsg = this.msg.substring(0, index) + '_'
-      if (this.msg.substring(index - 1, index) === ' ') {
-        setTimeout(() => {
-          window.requestAnimationFrame(() => this.animateMsg(this.msg))
-        }, 200)
-      } else {
-        setTimeout(() => {
-          window.requestAnimationFrame(() => this.animateMsg(this.msg))
-        }, 125)
-      }
-    } else {
-      this.animationMsg = this.animationMsg.replace('_', '')
-    }
-  }
-
   getPersona() {
     this.isLoading = true
     this.personaService.getPersona().subscribe({
       next: (data: PersonaResponse) => {
         this.persona = data
-        this.msg = `Hello, I am ${this.persona?.firstName}, a Web Developer and I work with both Frontend and Backend`
-        if (this.msg !== '') {
-          window.requestAnimationFrame(() => this.animateMsg(this.msg))
-        }
       },
       error: (error: HttpErrorResponse) => this.isLoading = false,
       complete: () => this.isLoading = false

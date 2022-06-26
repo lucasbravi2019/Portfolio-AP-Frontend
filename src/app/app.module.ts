@@ -27,6 +27,7 @@ import { AboutHomeComponent } from './components/about-home/about-home.component
 import { EducationHomeComponent } from './components/education-home/education-home.component';
 import { EducationAdminComponent } from './components/education-admin/education-admin.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { NavigationFooterComponent } from './components/navigation-footer/navigation-footer.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { LogoComponent } from './components/logo/logo.component';
     EducationHomeComponent,
     EducationAdminComponent,
     LogoComponent,
+    NavigationFooterComponent,
   ],
   imports: [
     BrowserModule,

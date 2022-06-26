@@ -1,9 +1,11 @@
 <section *ngIf="projectList.length > 0">
     <h3>Projects</h3>
-    <div *ngFor="let project of projectList">
-        <p>{{ project.projectName }}</p>
-        <p>{{ project.description }}</p>
-        <p>{{ project.site }}</p>
-        <p>{{ project.image }}</p>
+    <div class="contenedor">
+        <div *ngFor="let project of projectList" class="info">
+            <img [src]="project.image" alt="Project Image">
+            <h4>{{ project.projectName }}</h4>
+            <p>{{ project.description }}</p>
+            <a [href]="project.site">Visit Site</a>
+        </div>
     </div>
 </section>

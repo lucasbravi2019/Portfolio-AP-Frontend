@@ -22,29 +22,23 @@
     </form>
     <div *ngIf="isLoading" class="isLoading"></div>
     <div *ngIf="!isLoading && this.projectList.length > 0">
-        <div *ngFor="let project of this.projectList">
-            <table>
-                <tr>
-                    <th>Project Name</th>
-                    <th>Description</th>
-                    <th>Site</th>
-                    <th>Image</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-                <tr>
-                    <td>{{ project.projectName }}</td>
-                    <td>{{ project.description }}</td>
-                    <td>{{ project.site }}</td>
-                    <td>{{ project.image }}</td>
-                    <td><button (click)="actualizar(project)">Edit</button></td>
-                    <td><button (click)="borrar(project.id)">Delete</button></td>
-                </tr>
-            </table>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-        </div>
+        <table>
+            <tr>
+                <th>Project Name</th>
+                <th>Description</th>
+                <th>Site</th>
+                <th>Image</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr *ngFor="let project of this.projectList">
+                <td>{{ project.projectName }}</td>
+                <td>{{ project.description }}</td>
+                <td>{{ project.site }}</td>
+                <td>{{ project.image }}</td>
+                <td><button (click)="actualizar(project)">Edit</button></td>
+                <td><button (click)="borrar(project.id)">Delete</button></td>
+            </tr>
+        </table>
     </div>
 </section>

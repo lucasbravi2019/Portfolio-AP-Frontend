@@ -1,7 +1,10 @@
 <section *ngIf="this.technologyList.length > 0">
     <h3>Technologies</h3>
-    <div *ngFor="let technology of this.technologyList">
-        <p>{{ technology.technologyName }}</p>
-        <p>{{ technology.technologyLevel }}</p>
+    <div *ngFor="let technology of this.technologyList" class="contenedor">
+        <fa-icon [icon]="code" class="icon"></fa-icon>
+        <div class="info">
+            <h4>{{ technology.technologyName }}</h4>
+            <p>{{ technology.technologyLevel }}</p>
+        </div>
     </div>
 </section>

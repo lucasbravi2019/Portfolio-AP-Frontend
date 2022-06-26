@@ -60,3 +60,35 @@
         align-items: center;
     }
 }
+
+@mixin card {
+    section {
+        border-top: 5px ridge lightgray;
+        margin: 3rem 0;
+        padding: 2rem;
+    }
+    h3 {
+        @include centrarTexto;
+    }
+    .icon {
+        font-size: 8rem;
+        color: gray;
+        margin: auto;
+    }
+    .contenedor {
+        @include contenedor(1rem);
+        @include grid(2);
+        gap: 3rem;
+        box-shadow: 2px 2px 5px 2px gray;
+    }
+    h4 {
+        font-size: 2rem;
+    }
+}
+
+@mixin time {
+    time {
+        color: gray;
+        font-size: 1.5rem;
+    }
+}

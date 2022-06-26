@@ -10,6 +10,7 @@ export class FooterComponent implements OnInit {
   constructor() { }
 
   @Input() footer: string = ''
+  @Input() propietary: string = ''
 
   ngOnInit(): void {
   }

@@ -1,8 +1,11 @@
 <section *ngIf="this.educationList.length > 0">
     <h3>Education</h3>
-    <div *ngFor="let education of this.educationList">
-        <p>{{ education.institute }}</p>
-        <p>{{ education.title }}</p>
-        <time>{{ education.startDate }} - {{ education.endDate }}</time>
+    <div *ngFor="let education of this.educationList" class="contenedor">
+        <fa-icon [icon]="graduation" class="icon"></fa-icon>
+        <div class="info">
+            <h4>{{ education.institute }}</h4>
+            <p>{{ education.title }}</p>
+            <time>{{ education.startDate }} - {{ education.endDate }}</time>
+        </div>
     </div>
 </section>

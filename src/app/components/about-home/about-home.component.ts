@@ -15,28 +15,9 @@ export class AboutHomeComponent implements OnInit {
 
   aboutUs = faAddressCard
 
-  constructor(private aboutService: AboutService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    // this.getAbout()
   }
-
-  // isLoading: boolean = false
-  // errorMsg: string | null = null
-
-  // getAbout() {
-  //   this.aboutService.getAbout().subscribe({
-  //     next: (data: AboutResponse) => {
-  //       this.about = data
-  //     },
-  //     error: (error: HttpErrorResponse) => {
-  //       this.isLoading = false
-  //       this.errorMsg = error.error.message
-  //     },
-  //     complete: () => {
-  //       this.isLoading = false
-  //     }
-  //   })
-  // }
 
 }
